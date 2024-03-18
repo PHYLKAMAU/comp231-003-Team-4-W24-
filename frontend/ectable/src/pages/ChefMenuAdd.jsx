@@ -15,10 +15,23 @@ const ChefMenuAdd = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => { 
     e.preventDefault();
-    // data part -yc
+  
+    if (!menu.name || !menu.description || !menu.price) {
+      alert('Please enter all fields.');
+      return;
+    }
+  
+    alert(`Menu Name: ${menu.name}\nMenu Description: ${menu.description}\nMenu Price: ${menu.price}`);
+
+    setMenu({
+      name: '',
+      description: '',
+      price: '',
+    });
   };
+   
 
   return (
     <div className="container mx-auto px-4 py-8">

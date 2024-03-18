@@ -6,6 +6,8 @@ const port = process.env.PORT || 5500;
 // app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/menu', require('./routes/menu.js'));
+
 
 app.use(
   cors({
